@@ -26,19 +26,19 @@ public class ProductRepository {
 
     public String showProducts(){
         StringBuilder sb = new StringBuilder();
-        sb.append("<h2>Wszystkie produkty: </h2><br>");
+        sb.append("<h2>Wszystkie produkty: </h2></br>");
         for (Product p: produkty) {
-            sb.append(p.toString()+"<br>");
+            sb.append(p.toString()+"</br>");
         }
         return sb.toString();
     }
 
     public String showProductsByCategory(String category){
         StringBuilder sb = new StringBuilder();
-        sb.append("<h3>Wszystkie produkty z kategorii: " + category +"</h2><br>");
+        sb.append("<h3>Wszystkie produkty z kategorii: " + category +"</h2></br>");
         for (Product p: produkty) {
             if(p.getCategory().getDescription().equals(category)) {
-                sb.append(p.toString() + "<br>");
+                sb.append(p.toString() + "</br>");
             }
         }
         return sb.toString();

@@ -31,10 +31,10 @@ public class ProductController {
         productRepository.addProduct(new Product("Owoce", 11.99,Category.GROCERIES));
         productRepository.addProduct(new Product("Zeszyt", 4.5,Category.OTHER));
 
-        if(("").equals(category)){
+        if(("").equals(category)||category==null){
             return productRepository.showProducts();
         }
-        return productRepository.showProductsByCategory(category)+"<br>Suma cen= "
+        return productRepository.showProductsByCategory(category)+"</br>Suma cen= "
                 + productRepository.sumPrices(category);
     }
 
