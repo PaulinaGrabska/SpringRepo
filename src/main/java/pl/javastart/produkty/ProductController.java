@@ -43,11 +43,11 @@ public class ProductController {
                               @RequestParam (value = "nazwa")String name,
                               @RequestParam (value = "cena") Double price) {
 
-        if(name==null || ("").equals(name) ||category==null|| ("").equals(category) || price==0|| ("").equals(price)){
-            return "Wszystkie pola dotyczące produktu muszą być wypełnione.";
+        if(name==null || ("").equals(name) || category==null|| ("").equals(category) || price==null|| ("").equals(price)){
+            return "redirect:/";
         }else {
             productRepository.addProduct(new Product(name,price, Category.convert(category)));
-            return "Produkt został dodany.</br>";
+            return "redirect:/lista";
         }
     }
 
